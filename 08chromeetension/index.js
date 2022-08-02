@@ -1,12 +1,23 @@
-//let inputEl= document.getElementById("input-el")
-
-
-function saveInput(){
-    console.log("Button clicked by onclick attribute")
-}
-
-let inputBtn=document.getElementById("btn-el")
+let myLead=[]
+const inputEl=document.getElementById("input-el")
+const inputBtn=document.getElementById("btn-el")
+const ulEl=document.getElementById("ul-el")
 
 inputBtn.addEventListener("click",function() {
-    console.log("button clicked by event listner")
+    myLead.push(inputEl.value)
+    inputEl.value=""
+    renderList()
 })
+
+function renderList(){
+    let listItems=""
+    for(let i=0;i<myLead.length;i++){
+        listItems+=`
+            <li>
+              <a target='_blank 'href='${myLead[i]}'>
+                ${myLead[i]}
+               </a>
+            </li> `
+    }
+    ulEl.innerHTML=listItems
+}
