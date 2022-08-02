@@ -21,3 +21,10 @@ function renderList(){
     }
     ulEl.innerHTML=listItems
 }
+
+
+
+const repecient="James"
+const email=`Hey ${repecient}! How is it going cheer peer`
+
+console.log(email)
